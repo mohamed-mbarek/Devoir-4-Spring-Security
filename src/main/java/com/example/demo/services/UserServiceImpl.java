@@ -1,5 +1,7 @@
 package com.example.demo.services;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +49,11 @@ public class UserServiceImpl implements UserService {
 		
 		user.getRoles().add(role);
 		return user;
+	}
+
+	@Override
+	public List<User> findAllUsers() {
+		return userRepository.findAll();
 	}
 
 }
